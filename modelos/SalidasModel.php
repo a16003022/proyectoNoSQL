@@ -60,7 +60,6 @@ class SalidasModel
                     "totalTripulantes" => $salida->getTotalTripulantes(),
                     "longitud" => $salida->getLongitud(),
                     "latitud" => $salida->getLatitud(),
-                    "peces" => $salida->getPeces(),
                 ],
             ]
         );

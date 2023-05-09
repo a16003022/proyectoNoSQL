@@ -63,6 +63,16 @@ switch ($pagina) {
         include_once __DIR__ . "/vistas/agregarPeces.php";
         include_once __DIR__ . "/vistas/pie.php";
         break;
+    case "agregarCapturas":
+        if (!isset($_GET["idPersona"])) {
+            exit("No hay id");
+        }
+        $persona = PersonasModel::obtenerPorId($_GET["idPersona"]);
+        $salida = SalidasModel::obtenerPorId($_GET["idSalida"]);
+        include_once __DIR__ . "/vistas/encabezado.php";
+        include_once __DIR__ . "/vistas/agregarCapturas.php";
+        include_once __DIR__ . "/vistas/pie.php";
+        break;
     case "editarBarco":
         if (!isset($_GET["id"])) {
             exit("No hay id");
@@ -166,6 +176,17 @@ switch ($pagina) {
             echo "Error al actualizar, intenta más tarde";
         }
         break;
+    case "guardarCapturas":
+        $id = $_POST["id"];
+        $datos= $_POST["datosPeces"];
+        $resultado = PersonasModel::actualizarConCapturas($id, $datos);
+        if ($resultado) {
+            header("Location: ?q=listarPersonas");
+            exit;
+        } else {
+            echo "Error al actualizar, intenta más tarde";
+        }
+        break;
     case "actualizarBarco":
         $barco = new Barco($_POST["nombreBarco"]);
         $id = $_POST["id"];
@@ -178,16 +199,16 @@ switch ($pagina) {
         }
         break;
     case "actualizarSalida":
-        $salida = new Salida($_POST["nombreSalida"], $_POST["idBarco"], $_POST["fechaSalida"], $_POST["totalTripulantes"], $_POST["longitud"], $_POST["latitud"], $_POST["peces"]);
         $id = $_POST["id"];
-        $resultado = SalidasModel::actualizar($id, $salida);
+        $salida = new Salida($_POST["nombreSalida"], $_POST["idBarco"], $_POST["fechaSalida"], $_POST["totalTripulantes"], $_POST["longitud"], $_POST["latitud"], $_POST["datosPeces"]);
+        $resultado = SalidasModel::actualizarConPeces($id, $salida);
         if ($resultado) {
             header("Location: ?q=listarSalidas");
             exit;
         } else {
             echo "Error al actualizar, intenta más tarde";
         }
-        break;          
+        break;        
     case "eliminarBarco":
         if (!isset($_GET["id"])) {
             exit("No hay id");

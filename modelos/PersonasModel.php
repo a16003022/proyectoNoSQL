@@ -105,11 +105,37 @@ class PersonasModel
                     "direccion" => $persona->getDireccion(),
                     "telefono" => $persona->getTelefono(),
                     "contacto" => $persona->getContacto(),
-                    "capturas" => $persona->getCapturas(),
                 ],
             ]
         );
         # Recuerda que puedes ver a cuántos afectó con $resultado->getModifiedCount()
+        return true;
+    }
+
+    public static function actualizarConCapturas($id, $datos)
+    {
+        echo "id => $id";
+        $baseDeDatos = self::obtenerBaseDeDatos();
+        $coleccion = $baseDeDatos->personas;
+        $peces = array();
+        foreach ($datos as $pez) {
+            $pezArray = array(
+                "id" => $pez["id"],
+                "nombre" => $pez["nombre"],
+                "cantidad" => $pez["cantidad"],
+            );
+            array_push($peces, $pezArray);
+        }
+        $resultado = $coleccion->updateOne(
+            // El criterio, algo así como where
+            ["_id" => new MongoDB\BSON\ObjectId($id)],
+            // Nuevos valores
+            [
+                '$set' => [
+                    "capturas" => $peces,
+                ],
+            ]
+        );
         return true;
     }
 

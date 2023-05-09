@@ -25,13 +25,16 @@
             <label for="fechaSalida">Fecha Salida</label>
             <input value="<?php echo $salida->fechaSalida;?>" required type="date" class="form-control" id="fechaSalida" name="fechaSalida">
         </div>
-        <div class="form-group">
-            <label for="peces">Peces a Capturar</label>
-            <input value="<?php echo $salida->peces;?>" required type="number" class="form-control" id="peces" name="peces">
-        </div>
         <input value="<?php echo $salida->longitud;?>" type="hidden" class="form-control" id="longitud" name="longitud">
         <input value="<?php echo $salida->latitud;?>" type="hidden" class="form-control" id="latitud" name="latitud">
         <input value="<?php echo $salida->totalTripulantes;?>" type="hidden" class="form-control" id="totalTripulantes" name="totalTripulantes">
+        <?php 
+            $i= 0;
+            foreach ($salida->peces as $pez) { $i++; ?>
+            <input type="hidden" value="<?php echo $pez->id ?>" name="datosPeces[<?php echo $i ?>][id]">
+            <input type="hidden" value="<?php echo $pez->nombre ?>" name="datosPeces[<?php echo $i ?>][nombre]">  
+            <input type="hidden" value="<?php echo $pez->precio ?>" name="datosPeces[<?php echo $i ?>][precio]"> 
+        <?php } ?>
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
     </div>

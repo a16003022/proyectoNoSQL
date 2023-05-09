@@ -26,7 +26,7 @@
         </div>
         <input type="hidden" class="form-control" name="idSalida" value="<?php echo $persona->idSalida ?>">
         <input type="hidden" class="form-control" name="idBarco" value="<?php echo $persona->idBarco ?>">
-        <input type="hidden" class="form-control" name="capturas" value="<?php echo $persona->capturas ?>">
+        <input type="hidden" class="form-control" name="capturas" value=" ">
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
     </div>
