@@ -54,7 +54,7 @@
                         } ?>
                     </td>
                     <td> 
-                    <a class="btn btn-warning" href="?q=agregarCapturas&idPersona=<?php echo $persona->_id?>&idSalida=<?php echo $persona->idSalida?>">Agregar/Editar<br>capturas</a><br>
+                    <a class="btn btn-warning" href="?q=agregarCapturas&idPersona=<?php echo $persona->_id?>&idSalida=<?php echo $persona->idSalida?>">Agregar/Cambiar<br>capturas</a><br>
                     </td>
                 </tr>
             <?php endforeach;?>
