@@ -1,6 +1,10 @@
 <div class="row">
-    <div class="col">
+    <div class="col-6">
         <h1>Capturas por personas</h1>
+        <h5>Salida: <?php echo $salida->nombreSalida ?></h5><br>
+    </div>
+    <div class="col-6 text-right">
+        <br><a href="?q=listarSalidas" class="btn btn-primary">Regresar</a>
     </div>
 </div>
 <div class="row">
@@ -50,7 +54,7 @@
                         } ?>
                     </td>
                     <td> 
-                    <a class="btn btn-success" href="?q=agregarCapturas&idPersona=<?php echo $persona->_id?>&idSalida=<?php echo $persona->idSalida?>">Agregar/Editar<br>capturas</a><br>
+                    <a class="btn btn-warning" href="?q=agregarCapturas&idPersona=<?php echo $persona->_id?>&idSalida=<?php echo $persona->idSalida?>">Agregar/Editar<br>capturas</a><br>
                     </td>
                 </tr>
             <?php endforeach;?>

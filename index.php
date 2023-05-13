@@ -24,7 +24,11 @@ switch ($pagina) {
         include_once __DIR__ . "/vistas/pie.php";
         break;
     case "listarPersonas":
-        $cursorPersonas = PersonasModel::obtenerConDatos();
+        if (!isset($_GET["id"])) {
+            exit("No hay id");
+        }
+        $salida = SalidasModel::obtenerPorId($_GET["id"]);
+        $cursorPersonas = PersonasModel::obtenerConDatosPorIdSalida($_GET["id"]);
         include_once __DIR__ . "/vistas/encabezado.php";
         include_once __DIR__ . "/vistas/listarPersonas.php";
         include_once __DIR__ . "/vistas/pie.php";

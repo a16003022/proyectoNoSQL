@@ -34,6 +34,13 @@ class PersonasModel
         return $coleccion->find(); // Sin criterio de búsqueda
     }
 
+    public static function obtenerConDatosPorIdSalida($id)
+    {
+        $baseDeDatos = self::obtenerBaseDeDatos();
+        $coleccion = $baseDeDatos->personasConDatos;
+        return $coleccion->find(['idSalida' => $id]); // por idSalida
+    }
+
     public static function obtenerTodos()
     {
         $baseDeDatos = self::obtenerBaseDeDatos();

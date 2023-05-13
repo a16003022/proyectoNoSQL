@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-6">
         <h1>Salidas</h1>
-        <h5>Agrupación de personas por salidas</h5>
+        <h5>Todas las salidas</h5>
     </div>
     <div class="col-6 text-right">
         <br><a href="?q=agregarSalida" class="btn btn-success">Agregar salida</a>
@@ -12,7 +12,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th></th>
+                    <th>Acciones</th>
                     <th>Nombre</th>
                     <th>Barco</th>
                     <th>Tripulantes</th>
@@ -23,6 +23,7 @@
             foreach ($cursorPersonas as $persona): ?>
                 <tr>
                     <td>
+                        <a class="btn btn-primary" href="?q=listarPersonas&id=<?php echo $persona->_id ?>">Ver<br>capturas</a><br>
                         <a class="btn btn-warning" href="?q=editarSalida&id=<?php echo $persona->_id ?>">Editar</a><br>
                         <a class="btn btn-danger" href="?q=eliminarSalida&id=<?php echo $persona->_id ?>">Eliminar</a><br><br>
                         <a class="btn btn-success" href="?q=agregarPersona&id=<?php echo $persona->_id?>">Agregar<br>persona</a>

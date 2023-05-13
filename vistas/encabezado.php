@@ -22,9 +22,6 @@
       <li class="nav-item <?php echo isset($_GET["q"]) && $_GET["q"] === "listarSalidas" ? "active": "" ?>">
         <a class="nav-link" href="?q=listarSalidas">Salidas</a>
       </li>
-      <li class="nav-item <?php echo isset($_GET["q"]) && $_GET["q"] === "listarPersonas" ? "active": "" ?>">
-        <a class="nav-link" href="?q=listarPersonas">Personas</a>
-      </li>
       <li class="nav-item <?php echo isset($_GET["q"]) && $_GET["q"] === "listarCapturas" ? "active": "" ?>">
         <a class="nav-link" href="?q=listarCapturas">Capturas</a>
       </li>
