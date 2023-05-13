@@ -57,13 +57,23 @@ class BarcosModel
     }
 
     public static function eliminar($id)
-    {
-        $baseDeDatos = self::obtenerBaseDeDatos();
-        $coleccion = $baseDeDatos->barcos;
-        $resultado = $coleccion->deleteOne(
-            // El criterio, algo así como where
-            ["_id" => new MongoDB\BSON\ObjectId($id)]
-        );
-        return $resultado->getDeletedCount() === 1;
+{
+    $baseDeDatos = self::obtenerBaseDeDatos();
+    $coleccionBarcos = $baseDeDatos->barcos;
+    $coleccionSalidas = $baseDeDatos->salidas;
+
+    // Verifica si hay alguna salida que haga referencia al barco que se quiere eliminar
+    $salidaConBarco = $coleccionSalidas->findOne(["idBarco" => $id]);
+    if (!empty($salidaConBarco)) {
+        throw new Exception("No se puede eliminar el barco ya que está relacionado a una salida registrada.");
     }
+
+    // Si no hay salidas que hagan referencia al barco, procede a eliminar el documento de la colección "barcos"
+    $resultado = $coleccionBarcos->deleteOne(
+        // El criterio, algo así como where
+        ["_id" => new MongoDB\BSON\ObjectId($id)]
+    );
+    return $resultado->getDeletedCount() === 1;
+}
+
 }

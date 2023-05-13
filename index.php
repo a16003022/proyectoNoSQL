@@ -252,12 +252,16 @@ switch ($pagina) {
             exit("No hay id");
         }
         $id = $_GET["id"];
-        $resultado = BarcosModel::eliminar($id);
-        if ($resultado) {
-            header("Location: ?q=listarBarcos");
-            exit;
-        } else {
-            echo "Error al eliminar, intenta más tarde";
+        try {
+            $resultado = BarcosModel::eliminar($id);
+            if ($resultado) {
+                header("Location: ?q=listarBarcos");
+                exit;
+            } else {
+                echo "Error al eliminar, intenta más tarde";
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
         }
         break;
     case "eliminarPersona":

@@ -6,32 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Proyecto Pescaderia</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" target="_blank" href="https://parzibyte.me/blog">Por Parzibyte</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" target="_blank" href="https://parzibyte.me/blog">Por Parzibyte</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item <?php echo isset($_GET["q"]) && $_GET["q"] === "listarBarcos" ? "active": "" ?>">
-        <a class="nav-link" href="?q=listarBarcos">Barcos</a>
-      </li>
-      <li class="nav-item <?php echo isset($_GET["q"]) && $_GET["q"] === "listarSalidas" ? "active": "" ?>">
-        <a class="nav-link" href="?q=listarSalidas">Salidas</a>
-      </li>
-      <li class="nav-item <?php echo isset($_GET["q"]) && $_GET["q"] === "listarCapturas" ? "active": "" ?>">
-        <a class="nav-link" href="?q=listarCapturas">Capturas</a>
-      </li>
-      <li class="nav-item <?php echo isset($_GET["q"]) && $_GET["q"] === "posiciones" ? "active": "" ?>">
-        <a class="nav-link" href="?q=posiciones">Posiciones</a>
-      </li>
-      <li class="nav-item <?php echo isset($_GET["q"]) && $_GET["q"] === "creditos" ? "active": "" ?>">
-        <a class="nav-link" href="?q=creditos">Acerca de</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<div class="container">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item <?php echo isset($_GET["q"]) && $_GET["q"] === "listarBarcos" ? "active": "" ?>">
+          <a class="nav-link" href="?q=listarBarcos">Barcos</a>
+        </li>
+        <li class="nav-item <?php echo isset($_GET["q"]) && $_GET["q"] === "listarSalidas" ? "active": "" ?>">
+          <a class="nav-link" href="?q=listarSalidas">Salidas</a>
+        </li>
+        <li class="nav-item <?php echo isset($_GET["q"]) && $_GET["q"] === "listarCapturas" ? "active": "" ?>">
+          <a class="nav-link" href="?q=listarCapturas">Capturas</a>
+        </li>
+        <li class="nav-item <?php echo isset($_GET["q"]) && $_GET["q"] === "posiciones" ? "active": "" ?>">
+          <a class="nav-link" href="?q=posiciones">Posiciones</a>
+        </li>
+        <li class="nav-item <?php echo isset($_GET["q"]) && $_GET["q"] === "creditos" ? "active": "" ?>">
+          <a class="nav-link" href="?q=creditos">Acerca de</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">

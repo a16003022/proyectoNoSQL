@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-6">
         <h1>Salidas</h1>
-        <h5>Todas las salidas</h5>
+        <h5>Relación de tripulantes por salidas</h5>
     </div>
     <div class="col-6 text-right">
         <br><a href="?q=agregarSalida" class="btn btn-success">Agregar salida</a>
@@ -9,7 +9,7 @@
 </div>
 <div class="row">
     <div class="col">
-        <table class="table">
+        <table id="miTabla" class="table">
             <thead>
                 <tr>
                     <th>Acciones</th>
@@ -31,7 +31,7 @@
                     <td><?php echo $persona->nombreSalida?></td>
                     <td><?php echo $persona->nombreBarco?></td>
                     <td>
-                        <table>
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -72,5 +72,16 @@
         </table>
     </div>
 </div>
-
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#miTabla').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+            },
+            "pageLength": 3, //Establece el número de filas por página en 3
+            "lengthMenu": [3, 5, 10 ,25, 50] //Establece las opciones del menú de longitud de página
+        });
+    });
+</script>

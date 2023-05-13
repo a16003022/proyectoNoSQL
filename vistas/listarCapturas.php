@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col">
         <h1>Capturas por salidas</h1>
+        <h5>Totales capturados<h5><br>
     </div>
 </div>
 <div class="row">
@@ -23,7 +24,7 @@
                     <td><?php echo $captura->nombreBarco?></td>
                     <td><?php echo $captura->totalTripulantes?></td>
                     <td>
-                        <table>
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -44,8 +45,12 @@
                                         <td><?php echo $pez->cantidad?></td>
                                         <td></td>
                                     </tr>
-                                <?php } else {
-
+                                <?php } else { ?>
+                                       <td><?php echo "N/A" ?></td>
+                                       <td><?php echo "Sin capturar" ?></td>
+                                       <td><?php echo "N/A" ?> </td>
+                                       <td><?php echo "0" ?> </td>
+                                       <td></td> <?php
                                     }
                                 } ?>
                             </tbody>
