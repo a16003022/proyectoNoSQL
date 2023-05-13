@@ -127,6 +127,34 @@ class SalidasModel
         return true;
     }
 
+    public static function cambiosPeces($id, $datos)
+    {
+        echo "id => $id";
+        $baseDeDatos = self::obtenerBaseDeDatos();
+        $coleccion = $baseDeDatos->salidas;
+        $peces = array();
+        foreach ($datos as $pez) {
+            $pezArray = array(
+                "id" => $pez["id"],
+                "nombre" => $pez["nombre"],
+                "precio"=> $pez["precio"],
+            );
+            array_push($peces, $pezArray);
+        }
+        $resultado = $coleccion->updateOne(
+            // El criterio, algo así como where
+            ["_id" => new MongoDB\BSON\ObjectId($id)],
+            // Nuevos valores
+            [
+                '$set' => [
+                    "peces" => $peces,
+                ],
+            ]
+        ); 
+
+    return true;
+    }
+
     public static function eliminar($id)
     {
         $baseDeDatos = self::obtenerBaseDeDatos();

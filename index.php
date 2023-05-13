@@ -127,6 +127,15 @@ switch ($pagina) {
         include_once __DIR__ . "/vistas/editarSalida.php";
         include_once __DIR__ . "/vistas/pie.php";
         break;
+    case "editarPeces":
+        if (!isset($_GET["id"])) {
+            exit("No hay id");
+        }
+        $salida = SalidasModel::obtenerPorId($_GET["id"]);
+        include_once __DIR__ . "/vistas/encabezado.php";
+        include_once __DIR__ . "/vistas/editarPeces.php";
+        include_once __DIR__ . "/vistas/pie.php";
+        break;
     case "agTripulantes":
         if (!isset($_GET["idSalida"])) {
             exit("No hay id");
@@ -216,6 +225,18 @@ switch ($pagina) {
         break;
     case "guardarCapturas":
         $id = $_POST["id"];
+        $idSalida= $_GET["id"];
+        $datos= $_POST["datosPeces"];
+        $resultado = PersonasModel::actualizarConCapturas($id, $datos);
+        if ($resultado) {
+            header("Location: ?q=listarPersonas&id=$idSalida");
+            exit;
+        } else {
+            echo "Error al actualizar, intenta más tarde";
+        }
+        break;
+    case "guardarPrecios": //aqui me quede
+        $id = $_POST["id"];
         $datos= $_POST["datosPeces"];
         $resultado = PersonasModel::actualizarConCapturas($id, $datos);
         if ($resultado) {
@@ -242,6 +263,17 @@ switch ($pagina) {
         $resultado = SalidasModel::actualizarConPeces($id, $salida);
         if ($resultado) {
             header("Location: ?q=listarSalidas");
+            exit;
+        } else {
+            echo "Error al actualizar, intenta más tarde";
+        }
+        break;
+    case "actualizarPeces":
+        $id = $_POST["id"];
+        $datos = $_POST["datosPeces"];
+        $resultado = SalidasModel::cambiosPeces($id, $datos);
+        if ($resultado) {
+            header("Location: ?q=listarCapturas");
             exit;
         } else {
             echo "Error al actualizar, intenta más tarde";

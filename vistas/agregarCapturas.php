@@ -6,7 +6,7 @@
 </div>
 <div class="row">
     <div class="col">
-    <form method="POST" action="?q=guardarCapturas">
+    <form method="POST" action="?q=guardarCapturas&id=<?php echo $persona->idSalida?>">
         <input type="hidden" class="form-control" name="id" value="<?php echo $persona->_id ?>">
         <?php
         $i= 0;

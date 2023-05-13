@@ -9,7 +9,7 @@
 </div>
 <div class="row">
     <div class="col">
-        <table class="table">
+        <table id="miTabla" class="table">
             <thead>
                 <tr>
                     <th>Nombre persona</th>
@@ -62,5 +62,18 @@
         </table>
     </div>
 </div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#miTabla').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+            },
+            "pageLength": 10, //Establece el número de filas por página en 3
+            "lengthMenu": [10, 15 ,20 , 25, 50] //Establece las opciones del menú de longitud de página
+        });
+    });
+</script>
 
 
