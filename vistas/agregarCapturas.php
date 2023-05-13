@@ -21,6 +21,7 @@
                 <label>Cantidad capturada</label>
                 <input required type="text" class="form-control" name="datosPeces[<?php echo $i ?>][cantidad]" placeholder="Cantidad capturada en Kilos">
             </div>
+            <input type="hidden" class="form-control" name="datosPeces[<?php echo $i ?>][precio]" value="<?php echo $pez->precio?>">
         <?php } ?>
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>

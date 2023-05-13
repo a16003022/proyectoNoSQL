@@ -57,7 +57,7 @@
                                         <td>
                                             <a class="btn btn-warning" href="?q=editarPersona&id=<?php echo $tripulante->_id ?>">Editar</a><br>
                                             <?php if ($contador > 1){ //no se puede quedar sin tripulantes un barco que ya salió ?>
-                                                <a class="btn btn-danger" href="?q=eliminarPersona&id=<?php echo $tripulante->_id ?>">Eliminar</a>
+                                                <a class="btn btn-danger" href="?q=eliminarPersona&idP=<?php echo $tripulante->_id ?>&idS=<?php echo $persona->_id?>">Eliminar</a>
                                             <?php } ?>
                                         </td>
                                     </tr> <?php 

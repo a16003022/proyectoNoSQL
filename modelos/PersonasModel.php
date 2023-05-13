@@ -43,7 +43,21 @@ class PersonasModel
 
     public static function insertar($persona)
     {
+        // Obtener la salida correspondiente
         $baseDeDatos = self::obtenerBaseDeDatos();
+        $coleccionSalidas = $baseDeDatos->salidas;
+        $salida = $coleccionSalidas->findOne([
+            "_id" => new MongoDB\BSON\ObjectId($persona->getIdSalida())
+        ]);
+
+        // Actualizar el campo totalTripulantes de la salida
+        $totalTripulantes = intval($salida->totalTripulantes) + 1;
+        $resultado = $coleccionSalidas->updateOne(
+            ["_id" => new MongoDB\BSON\ObjectId($persona->getIdSalida())],
+            ['$set' => ['totalTripulantes' => strval($totalTripulantes)]]
+        );
+
+        //realizar la inserción de una nueva persona
         $coleccion = $baseDeDatos->personas;
         $resultado = $coleccion->insertOne([
             "idSalida" => $persona->getIdSalida(),
@@ -77,16 +91,36 @@ class PersonasModel
     return $resultado->getInsertedCount() === count($datos);
     }
 
-    public static function eliminar($id)
+    public static function eliminar($id, $idSalida)
     {
         $baseDeDatos = self::obtenerBaseDeDatos();
-        $coleccion = $baseDeDatos->personas;
-        $resultado = $coleccion->deleteOne(
-            // El criterio, algo así como where
+        $personasColeccion = $baseDeDatos->personas;
+        $salidasColeccion = $baseDeDatos->salidas;
+        
+        // 1. Obtener el valor actual del campo totalTripulantes y convertirlo a numérico
+        $salida = $salidasColeccion->findOne(
+            ["_id" => new MongoDB\BSON\ObjectId($idSalida)],
+            ["projection" => ["totalTripulantes" => 1]]
+        );
+        $totalTripulantes = intval($salida->totalTripulantes);
+
+        // 2. Restar uno al valor obtenido
+        $nuevoTotalTripulantes = $totalTripulantes - 1;
+
+        // 3. Actualizar el campo totalTripulantes de la salida correspondiente
+        $salidasColeccion->updateOne(
+            ["_id" => new MongoDB\BSON\ObjectId($idSalida)],
+            ['$set' => ["totalTripulantes" => strval($nuevoTotalTripulantes)]]
+        );
+
+        // 4. Eliminar el documento en la colección Personas
+        $resultado = $personasColeccion->deleteOne(
             ["_id" => new MongoDB\BSON\ObjectId($id)]
         );
+        
         return $resultado->getDeletedCount() === 1;
     }
+    
     
     public static function actualizar($id, $persona)
     {
@@ -123,6 +157,7 @@ class PersonasModel
                 "id" => $pez["id"],
                 "nombre" => $pez["nombre"],
                 "cantidad" => $pez["cantidad"],
+                "precio"=> $pez["precio"],
             );
             array_push($peces, $pezArray);
         }

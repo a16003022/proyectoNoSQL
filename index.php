@@ -223,11 +223,12 @@ switch ($pagina) {
         }
         break;
     case "eliminarPersona":
-        if (!isset($_GET["id"])) {
+        if (!isset($_GET["idP"])) {
             exit("No hay id");
         }
-        $id = $_GET["id"];
-        $resultado = PersonasModel::eliminar($id);
+        $id = $_GET["idP"];
+        $idSalida = $_GET["idS"];
+        $resultado = PersonasModel::eliminar($id, $idSalida);
         if ($resultado) {
             header("Location: ?q=listarSalidas");
             exit;

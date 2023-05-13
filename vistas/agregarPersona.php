@@ -25,7 +25,7 @@
             <input required type="text" class="form-control" id="contacto" name="contacto" placeholder="Contacto del tripulante"><br>
         </div>
         <input type="hidden" class="form-control" name="idSalida" value="<?php echo $salida->_id ?>">
-        <input type="hidden" class="form-control" name="idBarco" value="<?php echo $salida->_id ?>">
+        <input type="hidden" class="form-control" name="idBarco" value="<?php echo $salida->idBarco ?>">
         <input type="hidden" class="form-control" name="capturas" value="Sin capturas">
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>

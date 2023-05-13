@@ -8,19 +8,16 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th></th>
                     <th>Nombre persona</th>
                     <th>Salida</th>
                     <th>Barco</th>
                     <th>Capturas</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
             <?php foreach ($cursorPersonas as $persona): ?>
                 <tr>
-                    <td> 
-                    <a class="btn btn-success" href="?q=agregarCapturas&idPersona=<?php echo $persona->_id?>&idSalida=<?php echo $persona->idSalida?>">Agregar/Editar<br>capturas</a>
-                    </td>
                     <td><?php echo $persona->nombre?></td>
                     <td><?php echo $persona->nombreSalida?></td>
                     <td><?php echo $persona->nombreBarco?></td>
@@ -50,6 +47,9 @@
                         <?php }else{
                             echo $persona->capturas;
                         } ?>
+                    </td>
+                    <td> 
+                    <a class="btn btn-success" href="?q=agregarCapturas&idPersona=<?php echo $persona->_id?>&idSalida=<?php echo $persona->idSalida?>">Agregar/Editar<br>capturas</a>
                     </td>
                 </tr>
             <?php endforeach;?>
