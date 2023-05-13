@@ -139,5 +139,17 @@ class PersonasModel
         return true;
     }
 
+    public static function eliminarPorIdSalida($idSalida)
+    {
+    $baseDeDatos = self::obtenerBaseDeDatos();
+    $coleccion = $baseDeDatos->personas;
+    $resultado = $coleccion->deleteMany(
+        // El criterio, algo así como where
+        ["idSalida" => $idSalida]
+    );
+    return $resultado->getDeletedCount();
+    }
+
+
 }
 ?>

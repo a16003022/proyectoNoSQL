@@ -240,8 +240,9 @@ switch ($pagina) {
             exit("No hay id");
         }
         $id = $_GET["id"];
-        $resultado = SalidasModel::eliminar($id);
-        if ($resultado) {
+        $personas = PersonasModel::eliminarPorIdSalida($id);
+        $salida = SalidasModel::eliminar($id);
+        if ($salida && $personas) {
             header("Location: ?q=listarSalidas");
             exit;
         } else {
