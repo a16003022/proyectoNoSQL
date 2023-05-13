@@ -13,7 +13,7 @@
                     <th>Barco</th>
                     <th>Tripulantes</th>
                     <th>Capturas</th>
-                    
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +57,11 @@
                                 } ?>
                             </tbody>
                         </table>
+                    </td>
+                    <td> 
+                    <?php if ($bandera == true) { ?>
+                        <a class="btn btn-success" href="?q=listarPersonas&id=<?php echo $captura->idSalida ?>">Ver<br>detalles</a><br>
+                    <?php } ?>
                     </td>
                 </tr>
             <?php endforeach;?>
