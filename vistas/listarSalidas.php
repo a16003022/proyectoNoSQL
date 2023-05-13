@@ -23,7 +23,7 @@
             foreach ($cursorPersonas as $persona): ?>
                 <tr>
                     <td>
-                        <a class="btn btn-primary" href="?q=listarPersonas&id=<?php echo $persona->_id ?>">Ver<br>capturas</a><br>
+                        <a class="btn btn-primary" href="?q=listarPersonas&id=<?php echo $persona->_id ?>">Registrar<br>capturas</a><br>
                         <a class="btn btn-warning" href="?q=editarSalida&id=<?php echo $persona->_id ?>">Editar</a><br>
                         <a class="btn btn-danger" href="?q=eliminarSalida&id=<?php echo $persona->_id ?>">Eliminar</a><br><br>
                         <a class="btn btn-success" href="?q=agregarPersona&id=<?php echo $persona->_id?>">Agregar<br>persona</a>

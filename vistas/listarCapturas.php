@@ -59,9 +59,7 @@
                         </table>
                     </td>
                     <td> 
-                    <?php if ($bandera == true) { ?>
-                        <a class="btn btn-success" href="?q=listarPersonas&id=<?php echo $captura->idSalida ?>">Ver<br>detalles</a><br>
-                    <?php } ?>
+                    <a class="btn btn-success" href="?q=listarPersonas&id=<?php echo $captura->idSalida ?>">Detalles<br>(capturar)</a><br>
                     </td>
                 </tr>
             <?php endforeach;?>
