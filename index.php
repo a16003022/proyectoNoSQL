@@ -1,4 +1,5 @@
 <?php
+// Cargo todos los modelos que voy a utilizar en las diferentes vistas
 require_once __DIR__ . "/vendor/autoload.php";
 require_once __DIR__ . "/modelos/Barco.php";
 require_once __DIR__ . "/modelos/BarcosModel.php";
@@ -32,6 +33,12 @@ switch ($pagina) {
         $cursorPersonas= PersonasModel::obtenerPorSalidas();
         include_once __DIR__ . "/vistas/encabezado.php";
         include_once __DIR__ . "/vistas/listarSalidas.php";
+        include_once __DIR__ . "/vistas/pie.php";
+        break;
+    case "listarCapturas":
+        $cursorCapturas = SalidasModel::obtenerConCapturas();
+        include_once __DIR__ . "/vistas/encabezado.php";
+        include_once __DIR__ . "/vistas/listarCapturas.php";
         include_once __DIR__ . "/vistas/pie.php";
         break;
     case "agregarBarco":

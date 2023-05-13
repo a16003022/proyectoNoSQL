@@ -43,6 +43,13 @@ class SalidasModel
         return $coleccion->find(); // Sin criterio de búsqueda
     }
 
+    public static function obtenerConCapturas()
+    {
+        $baseDeDatos = self::obtenerBaseDeDatos();
+        $coleccion = $baseDeDatos->salidasConCapturas;
+        return $coleccion->find(); // Sin criterio de búsqueda
+    }
+
     public static function actualizar($id, $salida)
     {
         echo "id => $id";

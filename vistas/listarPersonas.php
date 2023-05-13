@@ -16,7 +16,8 @@
                 </tr>
             </thead>
             <tbody>
-            <?php foreach ($cursorPersonas as $persona): ?>
+            <?php
+            foreach ($cursorPersonas as $persona): ?>
                 <tr>
                     <td><?php echo $persona->nombre?></td>
                     <td><?php echo $persona->nombreSalida?></td>
@@ -49,7 +50,7 @@
                         } ?>
                     </td>
                     <td> 
-                    <a class="btn btn-success" href="?q=agregarCapturas&idPersona=<?php echo $persona->_id?>&idSalida=<?php echo $persona->idSalida?>">Agregar/Editar<br>capturas</a>
+                    <a class="btn btn-success" href="?q=agregarCapturas&idPersona=<?php echo $persona->_id?>&idSalida=<?php echo $persona->idSalida?>">Agregar/Editar<br>capturas</a><br>
                     </td>
                 </tr>
             <?php endforeach;?>
