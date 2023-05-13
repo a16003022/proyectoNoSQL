@@ -74,6 +74,26 @@ class SalidasModel
         return true;
     }
 
+    public static function actualizarPosicion($id, $longitud, $latitud)
+    {
+        echo "id => $id";
+        $baseDeDatos = self::obtenerBaseDeDatos();
+        $coleccion = $baseDeDatos->salidas;
+        $resultado = $coleccion->updateOne(
+            // El criterio, algo así como where
+            ["_id" => new MongoDB\BSON\ObjectId($id)],
+            // Nuevos valores
+            [
+                '$set' => [
+                    "longitud" => $longitud,
+                    "latitud" => $latitud,
+                ],
+            ]
+        );
+        # Recuerda que puedes ver a cuántos afectó con $resultado->getModifiedCount()
+        return true;
+    }
+
     public static function actualizarConPeces($id, $salida)
     {
         echo "id => $id";

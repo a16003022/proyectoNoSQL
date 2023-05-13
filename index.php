@@ -17,6 +17,12 @@ switch ($pagina) {
         include_once __DIR__ . "/vistas/creditos.php";
         include_once __DIR__ . "/vistas/pie.php";
         break;
+    case "posiciones":
+        $cursorSalidas= PersonasModel::obtenerPorSalidas();
+        include_once __DIR__ . "/vistas/encabezado.php";
+        include_once __DIR__ . "/vistas/posiciones.php";
+        include_once __DIR__ . "/vistas/pie.php";
+        break;
     case "listarPersonas":
         $cursorPersonas = PersonasModel::obtenerConDatos();
         include_once __DIR__ . "/vistas/encabezado.php";
@@ -89,6 +95,15 @@ switch ($pagina) {
         include_once __DIR__ . "/vistas/editarBarco.php";
         include_once __DIR__ . "/vistas/pie.php";
         break;
+    case "editarPosicion":
+        if (!isset($_GET["id"])) {
+            exit("No hay id");
+        }
+        $salida = SalidasModel::obtenerPorId($_GET["id"]);
+        include_once __DIR__ . "/vistas/encabezado.php";
+        include_once __DIR__ . "/vistas/editarPosicion.php";
+        include_once __DIR__ . "/vistas/pie.php";
+        break;
     case "editarPersona":
         if (!isset($_GET["id"])) {
             exit("No hay id");
@@ -134,6 +149,18 @@ switch ($pagina) {
         $result = BarcosModel::insertar($barco);
         if ($result) {
             header("Location: ?q=listarBarcos");
+            exit;
+        } else {
+            echo "Error al insertar, intenta más tarde";
+        }
+        break;
+    case "guardarPosicion":
+        $id = $_POST["id"];
+        $longitud = $_POST["longitud"];
+        $latitud = $_POST["latitud"];
+        $result = SalidasModel::actualizarPosicion($id, $longitud, $latitud);
+        if ($result) {
+            header("Location: ?q=posiciones");
             exit;
         } else {
             echo "Error al insertar, intenta más tarde";

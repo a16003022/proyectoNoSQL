@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col">
-        <h1>Capturas por personas</h1>
+        <h1>Capturas por salidas</h1>
     </div>
 </div>
 <div class="row">
