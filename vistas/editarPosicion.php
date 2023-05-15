@@ -1,7 +1,21 @@
+<style>
+    .dataTables_info{
+        color: white !important;
+    }
+    .dataTables_length{
+        color: white !important;
+    }
+    .dataTables_filter{
+        color: white !important;
+    }
+    .paginate_button{
+        color: white !important;
+    }
+</style>
 <div class="row">
     <div class="col">
-        <h1>Editar Posicion</h1>
-        <h5>Salida: <?php echo $salida->nombreSalida ?></h5>
+        <h1 style="font-family: 'Quicksand', sans-serif;">Editar Posicion</h1>
+        <h5 style="font-family: 'Quicksand', sans-serif;">Salida: <?php echo $salida->nombreSalida ?></h5>
     </div>
 </div>
 <div class="row">
@@ -16,7 +30,7 @@
             <label for="latitud">Latitud</label>
             <input value="<?php echo $salida->latitud;?>" required type="text" class="form-control" id="latitud" name="latitud">
         </div>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary" style="background-color: rgb(27, 186, 186) !important; border:rgb(27, 186, 186) !important;">Guardar</button>
     </form>
     </div>
 </div>

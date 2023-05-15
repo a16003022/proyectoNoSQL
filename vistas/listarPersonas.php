@@ -1,16 +1,30 @@
+<style>
+    .dataTables_info{
+        color: white !important;
+    }
+    .dataTables_length{
+        color: white !important;
+    }
+    .dataTables_filter{
+        color: white !important;
+    }
+    .paginate_button{
+        color: white !important;
+    }
+</style>
 <div class="row">
     <div class="col-6">
-        <h1>Capturas por personas</h1>
-        <h5>Salida: <?php echo $salida->nombreSalida ?></h5><br>
+        <h1 style="font-family: 'Quicksand', sans-serif;">Capturas por personas</h1>
+        <h5 style="font-family: 'Quicksand', sans-serif;">Salida: <?php echo $salida->nombreSalida ?></h5><br>
     </div>
     <div class="col-6 text-right">
-        <br><a href="?q=listarSalidas" class="btn btn-primary">Regresar</a>
+        <br><a href="?q=listarSalidas" class="btn btn-primary" style="background-color: rgb(27, 186, 186) !important; border:rgb(27, 186, 186) !important;">Regresar</a>
     </div>
 </div>
 <div class="row">
     <div class="col">
-        <table id="miTabla" class="table">
-            <thead>
+        <table id="miTabla" class="table text-dark">
+            <thead class="text-white">
                 <tr>
                     <th>Nombre persona</th>
                     <th>Salida</th>
@@ -54,7 +68,7 @@
                         } ?>
                     </td>
                     <td> 
-                    <a class="btn btn-warning" href="?q=agregarCapturas&idPersona=<?php echo $persona->_id?>&idSalida=<?php echo $persona->idSalida?>">Agregar/Cambiar<br>capturas</a><br>
+                    <a class="btn btn-warning" style="background-color: rgb(27, 186, 186) !important; border:rgb(27, 186, 186) !important;" href="?q=agregarCapturas&idPersona=<?php echo $persona->_id?>&idSalida=<?php echo $persona->idSalida?>"><i class="mdi mdi-plus-circle p-1"></i>Capturas</a><br>
                     </td>
                 </tr>
             <?php endforeach;?>

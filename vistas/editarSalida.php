@@ -1,6 +1,20 @@
+<style>
+    .dataTables_info{
+        color: white !important;
+    }
+    .dataTables_length{
+        color: white !important;
+    }
+    .dataTables_filter{
+        color: white !important;
+    }
+    .paginate_button{
+        color: white !important;
+    }
+</style>
 <div class="row">
     <div class="col">
-        <h1>Editar Salida</h1>
+        <h1 style="font-family: 'Quicksand', sans-serif;">Editar Salida</h1>
     </div>
 </div>
 <div class="row">
@@ -35,7 +49,7 @@
             <input type="hidden" value="<?php echo $pez->nombre ?>" name="datosPeces[<?php echo $i ?>][nombre]">  
             <input type="hidden" value="<?php echo $pez->precio ?>" name="datosPeces[<?php echo $i ?>][precio]"> 
         <?php } ?>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary" style="background-color: rgb(27, 186, 186) !important; border:rgb(27, 186, 186) !important;">Guardar</button>
     </form>
     </div>
 </div>

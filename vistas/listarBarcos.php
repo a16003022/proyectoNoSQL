@@ -1,11 +1,25 @@
-<div class="row">
+<style>
+    .dataTables_info{
+        color: white !important;
+    }
+    .dataTables_length{
+        color: white !important;
+    }
+    .dataTables_filter{
+        color: white !important;
+    }
+    .paginate_button{
+        color: white !important;
+    }
+</style>
+<div class="row text-white">
     <div class="col">
-        <h1>Barcos</h1>
+        <h1 style="font-family: 'Quicksand', sans-serif;">Barcos</h1>
     </div>
 </div>
 <div class="row">
     <div class="col">
-        <table id="miTabla" class="table">
+        <table id="miTabla" class="table text-white table-striped">
             <thead>
                 <tr>
                     <th>Nombre del barco</th>
@@ -17,8 +31,8 @@
                 <tr>
                     <td><?php echo $barco->nombreBarco ?></td>
                     <td>
-                        <a class="btn btn-warning" href="?q=editarBarco&id=<?php echo $barco->_id ?>">Editar</a>
-                        <a class="btn btn-danger" href="?q=eliminarBarco&id=<?php echo $barco->_id ?>">Eliminar</a>
+                        <a class="btn btn-warning" style="background-color: #F57A00 !important; border:#F57A00 !important;" href="?q=editarBarco&id=<?php echo $barco->_id ?>"><i class="mdi mdi-pencil-outline"></i></a>
+                        <a class="btn btn-danger" style="background-color: rgb(194, 2, 2) !important; border:rgb(194, 2, 2) !important;" href="?q=eliminarBarco&id=<?php echo $barco->_id ?>"><i class="mdi mdi-delete-alert"></i></a> 
                     </td>
                 </tr>
             <?php endforeach;?>
@@ -28,7 +42,7 @@
 </div>
 <div class="row">
     <div class="col">
-        <a href="?q=agregarBarco" class="btn btn-success">Agregar</a>
+        <a href="?q=agregarBarco" class="btn btn-success" style="background-color: rgb(27, 186, 186) !important; border:rgb(27, 186, 186) !important;"><i class="mdi mdi-plus-circle p-1"></i>Agregar</a>
         <br>
     </div>
 </div>

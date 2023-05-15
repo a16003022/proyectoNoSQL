@@ -1,11 +1,25 @@
+<style>
+    .dataTables_info{
+        color: white !important;
+    }
+    .dataTables_length{
+        color: white !important;
+    }
+    .dataTables_filter{
+        color: white !important;
+    }
+    .paginate_button{
+        color: white !important;
+    }
+</style>
 <div class="row">
     <div class="col">
-        <h1>Posiciones</h1>
+        <h1 style="font-family: 'Quicksand', sans-serif;">Posiciones</h1>
     </div>
 </div>
 <div class="row">
     <div class="col">
-        <table id="miTabla" class="table">
+        <table id="miTabla" class="table text-white table-striped">
             <thead>
                 <tr>
                     <th>Nombre del barco</th>
@@ -25,7 +39,7 @@
                     <td><?php echo $salida->longitud ?></td>
                     <td><?php echo $salida->latitud ?></td>
                     <td>
-                        <a class="btn btn-warning" href="?q=editarPosicion&id=<?php echo $salida->_id ?>">Editar<br>posición</a>
+                        <a class="btn btn-warning" style="background-color: #F57A00 !important; border:#F57A00 !important;" href="?q=editarPosicion&id=<?php echo $salida->_id ?>"><i class="mdi mdi-pencil-outline"></i></a>
                     </td>
                 </tr>
             <?php endforeach;?>

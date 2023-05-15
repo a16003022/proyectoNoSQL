@@ -1,7 +1,21 @@
+<style>
+    .dataTables_info{
+        color: white !important;
+    }
+    .dataTables_length{
+        color: white !important;
+    }
+    .dataTables_filter{
+        color: white !important;
+    }
+    .paginate_button{
+        color: white !important;
+    }
+</style>
 <div class="row">
     <div class="col">
-        <h1>Paso 3. Agregar peces objetivo</h1>
-        <h3>Salida: <?php echo $salida->nombreSalida ?></h3><br>
+        <h1 style="font-family: 'Quicksand', sans-serif;">Paso 3. Agregar peces objetivo</h1>
+        <h3 style="font-family: 'Quicksand', sans-serif;">Salida: <?php echo $salida->nombreSalida ?></h3><br>
         <?php $cantPeces = $_GET['cantPeces']; ?>
     </div>
 </div>
@@ -28,7 +42,7 @@
                 <input required type="text" class="form-control" id="precio<?php echo $i ?>" name="datosPeces[<?php echo $i ?>][precio]" placeholder="Precio por kilogramo">
             </div>
             <?php } ?>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary" style="background-color: rgb(27, 186, 186) !important; border:rgb(27, 186, 186) !important;">Guardar</button>
         </form>
     </div>
 </div>

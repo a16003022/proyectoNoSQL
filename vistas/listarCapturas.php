@@ -1,12 +1,26 @@
+<style>
+    .dataTables_info{
+        color: white !important;
+    }
+    .dataTables_length{
+        color: white !important;
+    }
+    .dataTables_filter{
+        color: white !important;
+    }
+    .paginate_button{
+        color: white !important;
+    }
+</style>
 <div class="row">
     <div class="col">
-        <h1>Capturas por salidas</h1>
-        <h5>Totales capturados<h5>
+        <h1 style="font-family: 'Quicksand', sans-serif;">Capturas por salidas</h1>
+        <h5 style="font-family: 'Quicksand', sans-serif;">Totales capturados<h5>
     </div>
 </div>
 <div class="row">
     <div class="col">
-        <table id="miTabla" class="table">
+        <table id="miTabla" class="table text-white table-striped">
             <thead>
                 <tr>
                     <th>Nombre Salida</th>
@@ -24,7 +38,7 @@
                     <td><?php echo $captura->nombreBarco?></td>
                     <td><?php echo $captura->totalTripulantes?></td>
                     <td>
-                        <table class="table">
+                        <table class="table text-dark">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -59,7 +73,7 @@
                         </table>
                     </td>
                     <td> 
-                    <a class="btn btn-success" href="?q=listarPersonas&id=<?php echo $captura->idSalida ?>">Detalles<br>(capturar)</a><br>
+                    <a class="btn btn-success" style="background-color: rgb(27, 186, 186) !important; border:rgb(27, 186, 186) !important;" href="?q=listarPersonas&id=<?php echo $captura->idSalida ?>">Detalles<br>(capturar)</a><br>
                     </td>
                 </tr>
             <?php endforeach;?>

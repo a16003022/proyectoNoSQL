@@ -1,7 +1,21 @@
+<style>
+    .dataTables_info{
+        color: white !important;
+    }
+    .dataTables_length{
+        color: white !important;
+    }
+    .dataTables_filter{
+        color: white !important;
+    }
+    .paginate_button{
+        color: white !important;
+    }
+</style>
 <div class="row">
     <div class="col">
-        <h1>Paso 2. Datos de los tripulantes</h1>
-        <h3>Salida: <?php echo $salida->nombreSalida ?></h3><br>
+        <h1 style="font-family: 'Quicksand', sans-serif;">Paso 2. Datos de los tripulantes</h1>
+        <h3 style="font-family: 'Quicksand', sans-serif;">Salida: <?php echo $salida->nombreSalida ?></h3><br>
         <?php 
         $cantPeces = $_GET['cantPeces']; 
         $idBarco = $_GET['idBarco']; 
@@ -35,7 +49,7 @@
         <input type="hidden" class="form-control" name="datosTripulantes[<?php echo $i ?>][idBarco]" value="<?php echo $idBarco ?>">
         <input type="hidden" class="form-control" name="datosTripulantes[<?php echo $i ?>][capturas]" value="Sin capturas">
         <?php } ?>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary" style="background-color: rgb(27, 186, 186) !important; border:rgb(27, 186, 186) !important;">Guardar</button>
     </form>
     </div>
 </div>

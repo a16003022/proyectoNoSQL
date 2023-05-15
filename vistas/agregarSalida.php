@@ -1,6 +1,20 @@
+<style>
+    .dataTables_info{
+        color: white !important;
+    }
+    .dataTables_length{
+        color: white !important;
+    }
+    .dataTables_filter{
+        color: white !important;
+    }
+    .paginate_button{
+        color: white !important;
+    }
+</style>
 <div class="row">
     <div class="col">
-        <h1>Paso 1. Datos de salida</h1><br>
+        <h1 style="font-family: 'Quicksand', sans-serif;">Paso 1. Datos de salida</h1><br>
     </div>
 </div>
 <div class="row">
@@ -39,7 +53,7 @@
             <input required type="number" class="form-control" id="cantPeces" name="cantPeces" placeholder="Cantidad de tipos de peces que se van a capturar">
         </div>
         <input type="hidden" class="form-control" id="peces" name="peces" value="Sin capturar">
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary" style="background-color: rgb(27, 186, 186) !important; border:rgb(27, 186, 186) !important;">Guardar</button>
     </form>
     </div>
 </div>

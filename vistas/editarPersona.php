@@ -1,6 +1,20 @@
+<style>
+    .dataTables_info{
+        color: white !important;
+    }
+    .dataTables_length{
+        color: white !important;
+    }
+    .dataTables_filter{
+        color: white !important;
+    }
+    .paginate_button{
+        color: white !important;
+    }
+</style>
 <div class="row">
     <div class="col">
-        <h1>EditarTripulante</h1><br>
+        <h1 style="font-family: 'Quicksand', sans-serif;">EditarTripulante</h1><br>
     </div>
 </div>
 <div class="row">
@@ -27,7 +41,7 @@
         <input type="hidden" class="form-control" name="idSalida" value="<?php echo $persona->idSalida ?>">
         <input type="hidden" class="form-control" name="idBarco" value="<?php echo $persona->idBarco ?>">
         <input type="hidden" class="form-control" name="capturas" value=" ">
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary" style="background-color: rgb(27, 186, 186) !important; border:rgb(27, 186, 186) !important;">Guardar</button>
     </form>
     </div>
 </div>
