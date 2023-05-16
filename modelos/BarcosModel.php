@@ -8,7 +8,7 @@ class BarcosModel
         //$usuario = rawurlencode("parzibyte");
         //$pass = rawurlencode("hunter2");
         $nombreBD = "pescaderia";
-        $cadenaConexion ='mongodb://localhost:27017';
+        $cadenaConexion ='mongodb+srv://hnarvaez:hnarvaez@cluster0.z7brgwz.mongodb.net/log?retryWrites=true&w=majority';
         $cliente = new MongoDB\Client($cadenaConexion);
         return $cliente->selectDatabase($nombreBD);
     }

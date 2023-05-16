@@ -21,7 +21,7 @@
         <h5 style="font-family: 'Quicksand', sans-serif;">Salida: <?php echo $salida->nombreSalida ?></h5><br>
     </div>
     <div class="col-6 text-right">
-        <br><a href="?q=listarSalidas" class="btn btn-primary" style="background-color: rgb(27, 186, 186) !important; border:rgb(27, 186, 186) !important;">Regresar</a>
+        <br><a href="?q=listarCapturas" class="btn btn-primary" style="background-color: rgb(27, 186, 186) !important; border:rgb(27, 186, 186) !important;">Regresar</a>
     </div>
 </div>
 <div class="row">
