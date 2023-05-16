@@ -11,6 +11,9 @@
     .paginate_button{
         color: white !important;
     }
+    tr:hover{
+        color:white !important;
+    }
 </style>
 <div class="row">
     <div class="col-6">
@@ -23,7 +26,7 @@
 </div>
 <div class="row">
     <div class="col">
-        <table id="miTabla" class="table text-dark">
+        <table id="miTabla" class="table text-dark table-hover">
             <thead class="text-white">
                 <tr>
                     <th>Nombre persona</th>

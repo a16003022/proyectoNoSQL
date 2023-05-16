@@ -11,6 +11,9 @@
     .paginate_button{
         color: white !important;
     }
+    #miTabla_paginate{
+        color:white !important;
+    }
 </style>
 <div class="row">
     <div class="col">

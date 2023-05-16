@@ -11,6 +11,9 @@
     .paginate_button{
         color: white !important;
     }
+    tr:hover{
+        color:white !important;
+    }
 </style>
 <div class="row">
     <div class="col">
@@ -19,9 +22,9 @@
 </div>
 <div class="row">
     <div class="col">
-        <table id="miTabla" class="table text-white table-striped">
+        <table id="miTabla" class="table text-dark table-hover">
             <thead>
-                <tr>
+                <tr class="text-white">
                     <th>Nombre del barco</th>
                     <th>Nombre salida</th>
                     <th>Fecha salida</th>
